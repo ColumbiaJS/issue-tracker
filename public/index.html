@@ -41,13 +41,10 @@
 
   <section class="content">
       <div id="content" class="animate-fade-up">
-        <ui-view class="page-transition view-transition"></ui-view>
+        <cu-content-wrapper></cu-content-wrapper>
       </div>
   </section>
-  <!-- <cu-footer></cu-footer> -->
-  <footer class="container-fluid text-center">
-    &copy: 2014 This is the footer
-  </footer>
+  <cu-footer></cu-footer>
 
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -119,6 +116,10 @@
   <script src="app/core/user/User.js"></script>
   <script src="app/dashboard/DashboardCtrl.js"></script>
   <script src="app/dashboard/config.route.js"></script>
+  <script src="app/layout/MainCtrl.js"></script>
+  <script src="app/layout/SidenavCtrl.js"></script>
+  <script src="app/layout/cu-content-wrapper.directive.js"></script>
+  <script src="app/layout/cu-footer.directive.js"></script>
   <!-- endinjector -->
   <!-- endbuild -->
 </body>
