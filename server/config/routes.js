@@ -27,6 +27,7 @@
       });
 
     app.use('/api/users', require('../api/user'));
+    app.use('/api/issues', require('../api/issues'));
     app.use('/auth', require('../auth'));
 
 
