@@ -18,7 +18,8 @@
     $stateProvider
       .state('app', {
         url: '/',
-        templateUrl: '/partials/layout/main.html'
+        templateUrl: '/partials/layout/main.html',
+        controller: 'MainCtrl'
       })
       .state('login', {
         url: '/login',
