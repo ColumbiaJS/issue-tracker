@@ -1,0 +1,9 @@
+machine:
+  node:
+    version: 0.10.22
+
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: <%= herokuAppName %>

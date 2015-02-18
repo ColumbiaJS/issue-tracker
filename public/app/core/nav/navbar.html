@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="nav-wrapper">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+        <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">
+          <span class="bold">Issuetracker</span>
+        </a>
+      </div>
+      <!-- REFACTOR TO MAKE navbar-brand -->
+      <!-- <navbar-brand></navbar-brand> -->
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <!--class="nav-collapse collapse navbar-responsive-collapse">-->
+      <div collapse="navCollapsed" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <!-- <lv-nav-menu></lv-nav-menu> -->
+        <!-- <lv-search-bar></lv-search-bar> -->
+        <lv-auth-widget></lv-auth-widget>
+        <!-- <guest-menu ng-show="!vm.isAuthenticated()"></guest-menu> -->
+        <!-- <user-menu ng-show="vm.isAuthenticated()"></user-menu> -->
+
+
+      </div><!-- /.navbar-collapse -->
+     </div>
+  </div><!-- /.container-fluid -->
+</nav>

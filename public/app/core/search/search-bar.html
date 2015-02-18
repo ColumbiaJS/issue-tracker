@@ -1,0 +1,16 @@
+<div>
+  {{suggestions}}
+  <form class="searchForm" ng-submit="search()" ui-scrollfix="-10" role="search">
+    <div class="searchbox">
+      <input type="text" class="textbox"
+             ng-model="query"
+             typeahead="suggest.label for suggest in suggestions($viewValue) | filter:$viewValue | limitTo:12"
+             typeahead-on-select="onSelect($item)" typeahead-min-length="3"
+             typeahead-wait-ms="100" ng-focus="isFocused = true"
+             ng-blur="isFocused = false" esc-focus="true"
+             placeholder="Search Google" tabindex="1" />
+    </div>
+    <button class="btn blue search" ng-click="search()"><i class="fa" ng-class="{'fa-circle-o':isLoading, 'fa-search':!isLoading}"></i></button>
+    <!--<input type="submit" value="Search"/>-->
+  </form>
+</div>

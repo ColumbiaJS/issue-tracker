@@ -1,0 +1,129 @@
+[
+  {
+    "email": "jennie.jenkins69@example.com",
+    "password": "vienna",
+    "role": "user",
+    "firstName": "jennie",
+    "lastName": "jenkins",
+    "displayName": "greenladybug282",
+    "images": {
+      "profile": {
+        "large": "http://api.randomuser.me/portraits/women/1.jpg",
+        "medium": "http://api.randomuser.me/portraits/med/women/1.jpg",
+        "thumb": "http://api.randomuser.me/portraits/thumb/women/1.jpg"
+      }
+    }
+  }, {
+    "email": "regina.bryant14@example.com",
+    "password": "william1",
+    "role": "user",
+    "firstName": "regina",
+    "lastName": "bryant",
+    "displayName": "organictiger959",
+    "images": {
+      "profile": {
+        "large": "http://api.randomuser.me/portraits/women/30.jpg",
+        "medium": "http://api.randomuser.me/portraits/med/women/30.jpg",
+        "thumb": "http://api.randomuser.me/portraits/thumb/women/30.jpg"
+      }
+    }
+  }, {
+    "email": "alvin.wheeler94@example.com",
+    "password": "excalibu",
+    "role": "user",
+    "firstName": "alvin",
+    "lastName": "wheeler",
+    "displayName": "redfrog342",
+    "images": {
+      "profile": {
+        "large": "http://api.randomuser.me/portraits/men/29.jpg",
+        "medium": "http://api.randomuser.me/portraits/med/men/29.jpg",
+        "thumb": "http://api.randomuser.me/portraits/thumb/men/29.jpg"
+      }
+    }
+  }, {
+    "email": "elaine.garza83@example.com",
+    "password": "denver",
+    "role": "user",
+    "firstName": "elaine",
+    "lastName": "garza",
+    "displayName": "ticklishmeercat181",
+    "images": {
+      "profile": {
+        "large": "http://api.randomuser.me/portraits/women/7.jpg",
+        "medium": "http://api.randomuser.me/portraits/med/women/7.jpg",
+        "thumb": "http://api.randomuser.me/portraits/thumb/women/7.jpg"
+      }
+    }
+  }, {
+    "email": "amy.arnold68@example.com",
+    "password": "shaman",
+    "role": "user",
+    "firstName": "amy",
+    "lastName": "arnold",
+    "displayName": "redfish222",
+    "images": {
+      "profile": {
+        "large": "http://api.randomuser.me/portraits/women/35.jpg",
+        "medium": "http://api.randomuser.me/portraits/med/women/35.jpg",
+        "thumb": "http://api.randomuser.me/portraits/thumb/women/35.jpg"
+      }
+    }
+  }, {
+    "email": "isaac.willis77@example.com",
+    "password": "thethe",
+    "role": "user",
+    "firstName": "isaac",
+    "lastName": "Willis",
+    "displayName": "silverbear334",
+    "images": {
+      "profile": {
+        "large": "http://api.randomuser.me/portraits/men/50.jpg",
+        "medium": "http://api.randomuser.me/portraits/med/men/50.jpg",
+        "thumb": "http://api.randomuser.me/portraits/thumb/men/50.jpg"
+      }
+    }
+  }, {
+    "email": "lonnie.bates66@example.com",
+    "password": "studio",
+    "role": "user",
+    "firstName": "lonnie",
+    "lastName": "bates",
+    "displayName": "lazyduck706",
+    "images": {
+      "profile": {
+        "large": "http://api.randomuser.me/portraits/men/88.jpg",
+        "medium": "http://api.randomuser.me/portraits/med/men/88.jpg",
+        "thumb": "http://api.randomuser.me/portraits/thumb/men/88.jpg"
+      }
+    }
+  }, {
+    "email": "mike.robinson18@example.com",
+    "password": "lindsey",
+    "role": "user",
+    "firstName": "mike",
+    "lastName": "robinson",
+    "displayName": "ticklishfrog711",
+    "images": {
+      "profile": {
+        "large": "http://api.randomuser.me/portraits/men/80.jpg",
+        "medium": "http://api.randomuser.me/portraits/med/men/80.jpg",
+        "thumb": "http://api.randomuser.me/portraits/thumb/men/80.jpg"
+      }
+    }
+  }, {
+    "email": "daryl.wright43@example.com",
+    "password": "enters",
+    "role": "user",
+    "firstName": "daryl",
+    "lastName": "wright",
+    "displayName": "goldenostrich329",
+    "images": {
+      "profile": {
+        "large": "http://api.randomuser.me/portraits/men/49.jpg",
+        "medium": "http://api.randomuser.me/portraits/med/men/49.jpg",
+        "thumb": "http://api.randomuser.me/portraits/thumb/men/49.jpg"
+      }
+    }
+  }
+]

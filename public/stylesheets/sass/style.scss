@@ -1,0 +1,18 @@
+@import url(//fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Open+Sans:400,300,600);
+@import 'all_variables';
+@import '../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+@import 'typography';
+@import 'layout';
+@import 'ng_dialog_custom';
+@import 'forms';
+@import 'material_overrides';
+@import 'bootstrap_overrides';
+
+
+// injector
+@import 'core/nav/nav';
+// endinjector
+
+body {
+  padding: 0;
+}

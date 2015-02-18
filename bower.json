@@ -1,0 +1,63 @@
+{
+  "name": "issue-tracker",
+  "version": "0.0.0",
+  "authors": [
+    "Lev Brie <lev.brie@gmail.com>"
+  ],
+  "description": "MEAN-stack application for Leviathan Technology",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "angularjs",
+    "lodash",
+    "nodejs",
+    "expressjs",
+    "mongodb",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "homepage": "http://leviathante.ch",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.1",
+    "lodash": "~2.4.1",
+    "bootstrap-sass-official": "~3.2.0",
+    "angular-animate": "~1.3.12",
+    "angular-cookies": "~1.3.12",
+    "angular-mocks": "~1.3.12",
+    "angular-resource": "~1.3.12",
+    "angular-route": "~1.3.12",
+    "angular-sanitize": "~1.3.12",
+    "angular-messages": "~1.3.12",
+    "angular": "~1.3.12",
+    "angular-utils-pagination": "~0.3.2",
+    "angular-aria": "~1.3.2",
+    "angular-hotkeys": "chieffancypants/angular-hotkeys#~1.4.5",
+    "moment": "~2.9.0",
+    "angular-moment": "~0.9.0",
+    "angular-ui-router": "~0.2.13",
+    "ngDialog": "~0.3.10",
+    "angular-ui-utils": "~0.2.1",
+    "angular-ui-select": "~0.9.6",
+    "angular-toastr": "~0.5.2",
+    "angular-material": "~0.7.1",
+    "angular-bootstrap": "~0.12.0",
+    "satellizer": "0.6.0"
+  },
+  "dependencies": {
+    "json3": "~3.3.2",
+    "es5-shim": "~4.0.1"
+  },
+  "resolutions": {
+    "angular": "~1.3.12"
+  }
+}

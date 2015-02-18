@@ -1,0 +1,143 @@
+nav.navbar { height: 100px;
+  .nav-wrapper {
+    border-bottom: 1px solid #666; padding-bottom: 20px;
+    .navbar-header {
+      h3 { margin-top: 0; }
+    }
+    .navbar-brand { font-size: inherit; }
+    a.navbar-brand { font-size: 24px; padding-top: 24px;}
+
+    a {
+      text-transform: uppercase; letter-spacing: 2px;
+      font-weight: 400; line-height: 1em; font-size: 13px;
+    }
+
+    h1{ opacity: 0; width: 100%; height: 120px; margin-bottom: 20px; }
+    a:focus{ outline: none; }
+
+
+    ul.nav.navbar-nav { padding: 5px;
+      &.auth-widget { padding-left: 30px;
+        li {
+          .media {
+            padding-top: 12px;
+            .media-body a {
+              color: $gray;
+              position: relative; top: 4px;
+            }
+          }
+        }
+      }
+      li.dropdown {
+        ul.dropdown-menu {
+          background-color: #000;
+          li {
+            a { color: white; font-size: 13px;
+              text-transform: uppercase; text-decoration: none;
+              letter-spacing: 2px; font-weight: 600;
+              font-style: normal; line-height: 1.8em; color: #fff;
+              &:hover {
+                color: $gray-lighter;
+              }
+            }
+          }
+        }
+      }
+    }
+    /*********************
+     SEARCH FORM
+     **********************/
+    form.searchForm {
+      display: flex; width: 30%;
+      position: absolute; left: 35%;
+      height: 35px; margin: auto;
+
+      &.ui-scrollfix{
+        position: fixed; padding: 0; left: 15px;
+        right: 15px; top: 10px; z-index: 20;
+      }
+
+      .searchbox{
+        z-index: 2; width: 100%; height: inherit;
+
+        input[type="text"]{
+          width: inherit; height: inherit; border: none;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          box-shadow: 1px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        ul.dropdown-menu {width: 100%;}
+      }
+
+      button.search{
+        min-width: 70px; height: inherit; font-size: 14px;
+        border-top-left-radius: 0; border-bottom-left-radius: 0;
+        box-shadow: 1px 2px 8px rgba(0,0,0,0.3) !important;
+      }
+
+      button.search:hover,
+      button.search:focus{
+        border-bottom-width: 2px;
+      }
+
+      input[type="submit"]{
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+
+/* ----------- TYPEAHEAD ----------- */
+
+.typeahead{
+  z-index: -1;
+  position: relative;
+  margin-top: 4px;
+
+  background-color: white;
+  font-family: sans-serif;
+  font-size: 13px;
+  color: #555;
+  overflow: hidden;
+
+  border-radius: 2px;
+
+  box-shadow: 1px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* fix for buggy animation of ng-show */
+.typeahead.ng-hide{
+  display: block;
+}
+
+.typeahead li{
+  font-family: "RobotoLight";
+  list-style: none;
+  padding: 5px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+}
+
+.typeahead li a{
+  display: block;
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: 2px center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.typeahead li a i{
+  margin-right: 10px;
+  color: #427fed;
+}
+
+.typeahead li.active{
+  border-color: #427fed;
+  background-color: #EFEFEF;
+}

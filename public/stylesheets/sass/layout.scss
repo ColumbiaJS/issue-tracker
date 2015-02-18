@@ -1,0 +1,64 @@
+// /********** MAIN CONTENT AREA ***********/
+
+// section.content {
+//   // min-height: 100%;
+//   background-color: #FCFCFC;
+//   position:relative;
+// }
+// #content {
+//   height: 100vh; // 100% of initial containing block (viewport height)
+// }
+
+// .offset-top {
+//   margin-top: 20px;
+// }
+
+
+// .raised-row {
+//   position: relative;
+//   bottom: 25px;
+// }
+// a.aside-link {
+//   text-decoration: none;
+//   display: block;
+//   width: 100%;
+//   // text-align: left;
+//   font-size: 18px;
+//   padding: 7px 15px;
+//   color: $gray-lighten;
+
+//   &.active {
+//     color: black;
+//   }
+//   &:hover {
+//     text-decoration: none;
+//     background-color: $gray-lightest;
+//     color: $gray-dark;
+//   }
+// }
+
+// h2 {
+//   a {
+//     text-decoration: none;
+//     display: block;
+//     width: 100%;
+//     // text-align: left;
+//     // font-size: 18px;
+//     padding: 7px 15px;
+//     &:active, &:focus, &:visited { text-decoration: none; }
+//     &:hover {
+//       text-decoration: none;
+//       background-color: $gray-lightest;
+//     }
+//   }
+//   &.switch-view {
+//     color: $gray-lighten;
+
+//     &.active { color: black; }
+//     &:hover {
+//       // text-decoration: none;
+//       // background-color: $gray-lightest;
+//       color: $gray-dark;
+//     }
+//   }
+// }

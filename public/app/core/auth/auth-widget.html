@@ -1,0 +1,48 @@
+<div>
+  <ul ng-if="!isAuthenticated()" class="nav navbar-nav navbar-right auth-widget">
+    <li><a href class="login" ng-click="displayLogin()">Login</a></li>
+    <li><a href>or</a></li>
+    <li><a href class="signup" ng-click="displaySignup()">Signup</a></li>
+
+  </ul>
+
+  <ul ng-if="isAuthenticated()" class="nav navbar-nav navbar-right auth-widget">
+    <li on-toggle="toggled(open)"
+        dropdown
+        class="dropdown">
+      <div class="media" class="dropdown-toggle" dropdown-toggle>
+        <a class="pull-right" href="#" >
+          <img class="media-object"
+               src="{{ currentUser().google.picture }}"
+               alt="{{ currentUser().profile.displayName }}"
+               width="30"
+               height="30">
+        </a>
+        <div class="media-body">
+          <a href="href"><span class="media-heading">{{currentUser().firstName}} {{currentUser().lastName}}<b class="caret"></b></span></a>
+        </div>
+      </div>
+
+      <ul ng-if="isAdmin()" class="dropdown-menu">
+        <li><a href="/admin">Admin</a></li>
+        <li><a ui-sref="dashboard.admin">Dashboard</a></li>
+        <li ui-sref-active="active">
+          <a ui-sref="founders">Founders</a>
+        </li>
+        <li><a href="" ng-click="logout()">Sign Out</a></li>
+      </ul>
+
+      <ul ng-if="isAuthenticated()" class="dropdown-menu">
+        <li><a ui-sref="dashboard.user">Dashboard</a></li>
+        <li>
+          <a ui-sref="users.edit.profile({id: currentUser()._id})">
+            User Profile
+          </a>
+        </li>
+        <li><a href="" ng-click="logout()">Sign Out</a></li>
+
+
+      </ul>
+    </li>
+  </ul>
+</div>

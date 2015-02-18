@@ -1,0 +1,102 @@
+/* TOOLBAR */
+md-toolbar.md-default-theme {
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  color: #03a9f4;
+
+  .md-primary.md-white {
+    background-color: #fff; color: black;
+    // &:hover { background-color: $gray-lighter; }
+  }
+}
+md-content.md-default-theme { background-color: none; }
+ /**
+  * override md-content with min-height of 400 and set to intiial containing
+  * viewport (viewport height of 100%)
+  */
+.full-height-content {height: 100vh;}
+/* MAKE BUTTON WHITE AND REDUCE SHADOW */
+md-button.md-default-theme.md-raised.md-primary:not([disabled]):hover,
+md-button.md-default-theme.md-raised.md-primary:not([disabled]).focus,
+md-button.md-default-theme.md-fab.md-primary:not([disabled]):hover,
+md-button.md-default-theme.md-fab.md-primary:not([disabled]).focus {
+  background-color: #fff;
+}
+
+.md-shadow-bottom-z-2, md-button.md-raised.focus:not([disabled]),
+md-button.md-raised:not([disabled]):hover,
+md-button.md-fab.focus:not([disabled]),
+md-button.md-fab:not([disabled]):hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* BUTTONS */
+.md-fab.md-primary {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none;
+  &:hover {
+    box-shadow: none;
+    border: none;
+    transform: none;
+    -webkit-transform: none;
+  }
+  button.-inner {
+    box-shadow: none;
+    border: none;
+    transform: none;
+    -webkit-transform: none;
+  }
+}
+
+md-toolbar .md-toolbar-tools .md-button:hover {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none;
+}
+
+.md-shadow-bottom-z-2,
+h1.md-toolbar-tools .md-raised.focus:not([disabled]),
+h1.md-toolbar-tools .md-raised:not([disabled]):hover,
+h1.md-toolbar-tools .md-fab.focus:not([disabled]),
+h1.md-toolbar-tools .md-fab:not([disabled]):hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0);
+}
+
+// .md-shadow-bottom-z-2, .md-raised.focus:not([disabled]), .md-raised:not([disabled]):hover, .md-fab.focus:not([disabled]), .md-fab:not([disabled]):hover {
+// box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+// }
+
+md-content.md-default-theme {
+  min-height: 400px;
+}
+
+// tabs
+md-tabs.md-default-theme {
+  section.md-header { background: #fff;
+    .md-header-items-container {
+      .md-header-items {
+        md-tabs-ink-bar {
+          color: black;
+          background: black;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          box-sizing: border-box;
+          height: 4px;
+          margin-top: -4px;
+          transform-origin: 0 0;
+          &.md-ink-bar-delayed {
+            transition: transform 0.35s cubic-bezier(0.45, 0, 0.15, 1);
+          }
+        }
+        md-tab { border: none;
+          md-tab-label {color: black;}
+        }
+      }
+    }
+  }
+}

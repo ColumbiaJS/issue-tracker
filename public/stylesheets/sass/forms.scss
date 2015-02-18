@@ -1,0 +1,71 @@
+// span.has-error {
+//   color: red;
+// }
+// span.has-success {
+//   color: green;
+// }
+
+// button.btn.btn-primary {
+//   &.btn-lg {
+//     font-family: $sans-font-family;
+//     text-transform: uppercase; text-decoration: none;
+//     letter-spacing: 2px;
+//     font-weight: 200;
+//     padding: 10px 35px;
+//   }
+// }
+
+// button.btn.btn-primary.btn-lg, .btn-group-lg > button.btn.btn-primary {
+//   font-weight: 200;
+// }
+
+// // override bootstrap label
+// h4.form-repeat-label, label {
+//   // display: inline-block;
+//   // max-width: 100%;
+//   padding-bottom: 4px;
+//   font-weight: normal;
+//   font-size: 20px;
+// }
+
+// .ui-select-bootstrap {
+//   div.btn-group.btn-block {
+//     button.btn.btn-default {
+//       &.col-sm-10.col-md-11 {
+//         width: 80%;
+//         border-right: none;
+//       }
+//       &.col-sm-2.col-md-1 {
+//         width: 20%;
+//         border-left: none;
+//         position: relative;
+//         right: 0px;
+//         span.caret {}
+//       }
+//     }
+//   }
+//   button.btn-default {
+
+//     color: $gray;
+//     background-color: $gray-lightest;
+//     border-color: $gray-lighter;
+//     border-radius: $border-radius;
+//     &:focus {
+//       background-color: white;
+//     }
+
+//   }
+// }
+
+// .action-box {
+//   text-align: center;
+//   display: block;
+//   border: 2px dashed $gray-light;
+//   i.fa {
+//     font-weight: 200;
+//     font-size: 22px;
+//   }
+//   // h4, p, i, span {
+//   //   text-align: center;
+//   // }
+// }
