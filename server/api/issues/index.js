@@ -2,7 +2,7 @@
   'use strict';
 
   var express    = require('express'),
-      router     = require('router'),
+      router     = express.Router(),
       controller = require('./issues.controller');
 
   router.get('/', controller.index);
