@@ -23,8 +23,6 @@
     $rootScope.$on('$stateChangeStart',
                   function(event, toState, toParams, fromState, fromParams){
       console.log('$stateChangeStart', toState, toParams);
-      // transitionTo() promise will be rejected with
-      // a 'transition prevented' error
     });
     $rootScope.$on('$stateNotFound',
     function(event, unfoundState, fromState, fromParams){

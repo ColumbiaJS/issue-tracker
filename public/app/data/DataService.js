@@ -72,54 +72,22 @@
 
     function get(apiPath, id) {
       return $http.get('/api/' + apiPath + '/' + id).then(getData);
-
-
     }
 
     function getIssue(id) {
       return get('issues', id).then(function (data) {
         return new Issue(data);
       });
-      // return $http.get('/api/issues/' + id).then(getData);
-
-      // function getData(data, status, headers, config) {
-      //   var issueData = data.data;
-      //   var issueToReturn;
-
-      //   issueToReturn = new Issue(issueData);
-      //   return issueToReturn;
-      // }
     }
 
     function getUser(id) {
       return get('users', id).then(function (data) {
         return new User(data);
       });
-      // return $http.get('/api/users/' + id).then(getData);
-
-      // function getData(data, status, headers, config) {
-      //   var userData = data.data;
-      //   var userToReturn;
-      //   console.log('data returned for single user');
-      //   console.log(data);
-      //   console.log('data in data for single user');
-      //   console.log(data.data);
-      //   userToReturn = new User(userData);
-      //   return userToReturn;
-      // }
     }
 
     function update(apiModelName, data) {
       return $http.put('/api/' + apiModelName + '/' + data._id, data).then(getData);
-
-      // function getData(data, status, headers, config) {
-      //   var dataToReturn = data.data;
-      //   console.log('data returned for update');
-      //   console.log(data);
-      //   console.log('data in data for update');
-      //   console.log(data.data);
-      //   return dataToReturn;
-      // }
     }
 
     function updateUser(userData) {
@@ -127,18 +95,6 @@
         var userToReturn = new User(data);
         return userToReturn;
       });
-      // return $http.put('/api/users/' + userData._id, userData).then(getData);
-
-      // function getData(data, status, headers, config) {
-      //   var userData = data.data;
-      //   var userToReturn;
-      //   console.log('data returned for user update');
-      //   console.log(data);
-      //   console.log('data in data for user update');
-      //   console.log(data.data);
-      //   userToReturn = new User(userData);
-      //   return userToReturn;
-      // }
     }
 
     function updateIssue(issueData) {
@@ -146,18 +102,6 @@
         var issueToReturn = new Issue(data);
         return issueToReturn;
       });
-      // return $http.put('/api/issues/' + issueData._id, issueData).then(getData);
-
-      // function getData(data, status, headers, config) {
-      //   var issueData = data.data;
-      //   var issueToReturn;
-      //   console.log('data returned for issue update');
-      //   console.log(data);
-      //   console.log('data in data for issue update');
-      //   console.log(data.data);
-      //   issueToReturn = new Issue(issueData);
-      //   return issueToReturn;
-      // }
     }
 
     function ready() {
