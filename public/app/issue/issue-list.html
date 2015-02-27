@@ -2,20 +2,22 @@
      hotkey="{right: vm.reselect, space: vm.reselect}">
 
 
-  <md-toolbar md-scroll-shrink><md-whiteframe class="md-whiteframe-z3">
-    <div class="md-toolbar-tools">
-      <filter-select
-        select-model="vm.filterOption"
-        filter-opts="vm.filterSelectOpts"></filter-select>
-      <expanding-search search-text="searchText"></expanding-search>
+  <md-toolbar md-scroll-shrink>
+    <md-whiteframe class="md-whiteframe-z3">
+      <div class="md-toolbar-tools">
+        <filter-select
+          select-model="vm.filterOption"
+          filter-opts="vm.filterSelectOpts"></filter-select>
+        <expanding-search search-text="searchText"></expanding-search>
 
-      <md-button class="md-fab md-primary md-white md-fab-right">
-        <md-tooltip>New Issue</md-tooltip>
-        <i class="fa fa-plus">
-        </i>
-      </md-button>
-    </div>
-  </md-whiteframe></md-toolbar>
+        <md-button class="md-fab md-primary md-white md-fab-right">
+          <md-tooltip>New Issue</md-tooltip>
+          <i class="fa fa-plus">
+          </i>
+        </md-button>
+      </div>
+    </md-whiteframe>
+  </md-toolbar>
 
   <md-content class="" style="height:600px;">
 
