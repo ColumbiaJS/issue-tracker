@@ -9,7 +9,8 @@
       useminPrepare : 'grunt-usemin',
       cdnify        : 'grunt-google-cdn',
       ngtemplates   : 'grunt-angular-templates',
-      changelog     : 'grunt-conventional-changelog'
+      changelog     : 'grunt-conventional-changelog',
+      buildcontrol  : 'grunt-build-control'
     };
     require('jit-grunt')(grunt, justInTimeStaticMappings);    // just-in-time plugin loader (no more loadNpmTasks)
     require('time-grunt')(grunt);
