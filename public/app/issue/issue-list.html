@@ -1,0 +1,71 @@
+<div layout="column" layout-fill
+     hotkey="{right: vm.reselect, space: vm.reselect}">
+
+
+  <md-toolbar md-scroll-shrink><md-whiteframe class="md-whiteframe-z3">
+    <div class="md-toolbar-tools">
+      <filter-select
+        select-model="vm.filterOption"
+        filter-opts="vm.filterSelectOpts"></filter-select>
+      <expanding-search search-text="searchText"></expanding-search>
+
+      <md-button class="md-fab md-primary md-white md-fab-right">
+        <md-tooltip>New Issue</md-tooltip>
+        <i class="fa fa-plus">
+        </i>
+      </md-button>
+    </div>
+  </md-whiteframe></md-toolbar>
+
+  <md-content class="" style="height:600px;">
+
+    <div class="screen screen1">
+      <!-- <pre>{{ vm.issues | json }}</pre> -->
+      <md-list>
+        <md-item ng-repeat="issue in vm.issues
+                        | filter: searchText
+                        | issueState: vm.filterOption"
+             ng-class="vm.selectedIndex === issue._id ? 'contact wrapper animatable screen1-contact' : 'contact'"
+             ng-click="vm.selectIssue(issue)"
+             animatable-id="contact"
+             id="{{issue._id}}">
+
+          <md-item-content>
+
+            <div class="md-tile-left">
+              <p ng-class="{'text-success': issue.state === 'open', 'text-error': issue.state === 'closed'}">{{ issue.state }}</p>
+              <!-- <img ng-src="{{issue.face}}" alt="{{issue.who}}" class="face"> -->
+            </div>
+            <div class="md-tile-content">
+              <h3>{{issue.number}}</h3>
+              <a href="{{issue.url}}">{{ issue. url }}</a>
+              <p>
+                {{issue.body}}
+              </p>
+            </div>
+<!--             <img ng-class="vm.selectedIndex === issue._id ? 'avatar animatable screen1-avatar' : 'avatar'"
+                animatable-id="img"
+                ng-src="{{issue.images.logo[0].thumb.url}}">
+            <div ng-class="vm.selectedIndex === issue._id ? 'name animatable' : 'name'"
+                 animatable-id="name">
+              <h3 class="paragraph-h3">{{issue.profile.name}}</h3>
+            </div>
+            <div ng-class="vm.selectedIndex === issue._id ? 'list animatable' : 'list'"
+                 animatable-id="list">
+              <h4>{{ issue.profile.title }} <small>{{ issue.profile.subtitle }}</small></h4>
+              <p><a href="{{ issue.profile.website }}">{{ issue.profile.website }}</a></p>
+
+              <p class="paragraph">
+                {{ issue.profile.summary }}
+              </p> -->
+
+          </md-item-content>
+
+        </md-item>
+      </md-list>
+
+    </div>
+
+  </md-content>
+
+</div>

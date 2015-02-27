@@ -1,0 +1,83 @@
+<div>
+  <h4>If Current User is Admin</h4>
+  <ul>
+    <li ui-sref-active="active">
+      <a ui-sref="users.edit.profile({id: issue._user._id})">Edit User {{issue._user._id}}</a>
+    </li>
+    <li ui-sref-active="active">
+      <a ui-sref="companies.edit.profile({id: issue._id})">Edit Issue {{ issue._id }}</a>
+    </li>
+  </ul>
+  <h4>Profile</h4>
+  <p><i class="fa fa-info"></i>Name: {{ issue.profile.name }}</p>
+  <p><i class="fa"></i>Title: {{ issue.profile.title }}</p>
+  <p><i class="fa"></i>Subtitle: {{ issue.profile.subtitle }}</p>
+  <p><i class="fa"></i>Summary: {{ issue.profile.summary }}</p>
+  <p><i class="fa"></i>Industry: {{ issue.profile.industry }}</p>
+  <p><i class="fa fa-calendar"></i>Founded: {{ issue.profile.foundedYear }}</p>
+  <p><i class="fa fa-sort-numeric-asc"></i>Office Size: {{ c.getOfficeSize() }}</p>
+  <p><i class="fa fa-external-link"></i>
+    <a ng-href="{{issue.profile.website}}">Issue Site: {{ issue.profile.website }}</a>
+  </p>
+  <p><i class="fa fa-building"></i>Address: {{ issue.profile.address }}</p>
+
+  <h4>Founders</h4>
+  <h6>
+    <div class="md-tile-left">
+      <img ng-src="{{issue._user.images.profile.thumb}}"
+        class="left-image"
+        alt="Founder of {{issue.profile.name }} - {{issue._user.lastName}}">
+    </div>
+    {{ issue._user.firstName }} {{ issue._user.lastName }}
+  </h6>
+  <p><i class="fa fa-calendar"></i>Joined: <span am-time-ago="issue._user.createdAt"></span></p>
+  <p><i class="fa fa-birthday-cake"></i>Born: {{ issue._user.contact.dob | amCalendar }}</p>
+
+  <div ng-repeat="user in issue.users">
+    <p>Name: {{ user.name }}</p>
+    <p>Title: {{ user.title }}</p>
+    <p>Bio: {{ user.bio }}</p>
+    <p ng-if="user._user">User Id: {{ user._user }}</p>
+  </div>
+
+  <div ng-repeat="address in issue._user.contact.addresses">
+    <p><i class="fa fa-home"></i>
+      {{ address.label }}:
+      {{ address.street }}, {{ address.city }} {{ address.state }} {{ address.zip }}
+    </p>
+  </div>
+
+  <div ng-repeat="phone in issue._user.contact.phones">
+    <p><i class="fa fa-mobile"></i>
+      {{ phone.label }}: {{ phone.number }}
+    </p>
+  </div>
+
+  <h4>Details</h4>
+  <p><i class="fa fa-comment"></i>Story: {{ issue.details.story }}</p>
+  <p><i class="fa"></i>Business Model: {{ issue.details.businessModel }}</p>
+  <p><i class="fa"></i>Biggest Lessons: {{ issue.details.biggestLessons }}</p>
+  <p><i class="fa"></i>Best Moment: {{ issue.details.bestMoment }}</p>
+  <p><i class="fa fa-binoculars"></i>Our Future: {{ issue.details.ourFuture }}</p>
+  <p><i class="fa fa-heart"></i>
+    Favorite Quote: {{ issue.details.favoriteQuote.text }}
+    - {{ issue.details.favoriteQuote.author }}
+  </p>
+  <p><i class="fa"></i>Links:
+    <div ng-repeat="link in issue.links">
+      <a ng-href="{{link.url}}">{{ link.name }}</a>
+    </div>
+  </p>
+  <p><i class="fa"></i>Images:
+    <img ng-src="{{issue.images.logo}}" alt="Logo for {{issue.profile.name}}">
+    <div ng-repeat="image in issue.images.products">
+      <img ng-src="image.url" alt="Product {{image.name}}">
+    </div>
+    <div ng-repeat="image in issue.images.websites">
+      <img ng-src="image.url" alt="Product {{image.name}}">
+    </div>
+    <div ng-repeat="image in issue.images.users">
+      <img ng-src="image.url" alt="Product {{image.name}}">
+    </div>
+  </p>
+</div>
