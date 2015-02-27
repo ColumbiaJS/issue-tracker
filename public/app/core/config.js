@@ -18,7 +18,7 @@
     $stateProvider
       .state('app', {
         url: '/',
-        templateUrl: '/partials/layout/main.html',
+        template: '<div></div>',    // there was nothing in our main.html
         controller: 'MainCtrl'
       })
       .state('login', {

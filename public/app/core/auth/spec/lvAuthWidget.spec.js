@@ -10,7 +10,7 @@
         AuthCtrl;
 
     beforeEach(module('app'));
-    beforeEach(module('/partials/layout/main.html'));
+    // beforeEach(module('/partials/layout/main.html'));
     beforeEach(module('/partials/core/auth/auth-widget.html'));
     // beforeEach(module(function($controllerProvider) {
     //   $controllerProvider.register('AuthCtrl', function($scope) {
