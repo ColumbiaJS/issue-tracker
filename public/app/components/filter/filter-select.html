@@ -1,0 +1,16 @@
+<ui-select
+  ng-model="selectModel"
+  theme="bootstrap"
+  on-select="onUISelect($item, $model)"
+  class="filter-select">
+  <ui-select-match placeholder="Filter...">
+    {{filterOpts.selectedPrefix}}{{$select.selected.text}}
+  </ui-select-match>
+  <ui-select-choices repeat="option in filterOpts.selectOptions">
+    <div ng-bind-html="option.text | highlight: $select.search"></div>
+    <small>
+      value: {{option.value}}
+      text: <span ng-bind-html="+option.text | highlight: $select.search"></span>
+    </small>
+  </ui-select-choices>
+</ui-select>
