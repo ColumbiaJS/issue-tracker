@@ -35,9 +35,9 @@ module.exports = function(config) {
       '../bower_components/angular-ui-utils/ui-utils.js',
       '../bower_components/angular-ui-select/dist/select.js',
       '../bower_components/angular-toastr/dist/angular-toastr.js',
-      '../bower_components/angular-material/angular-material.js',
       '../bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       '../bower_components/satellizer/satellizer.js',
+      '../bower_components/angular-material/angular-material.js',
       // endbower
       '../../test/test-app.js',
       '**/*.module.js',
