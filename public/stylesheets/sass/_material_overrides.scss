@@ -6,9 +6,10 @@ md-toolbar.md-default-theme {
 
   .md-primary.md-white {
     background-color: #fff; color: black;
-    // &:hover { background-color: $gray-lighter; }
+    &:hover { background-color: $gray-lighter; }
   }
 }
+md-checkbox .md-label { border: none; }
 md-content.md-default-theme { background-color: none; }
  /**
   * override md-content with min-height of 400 and set to intiial containing
@@ -16,17 +17,24 @@ md-content.md-default-theme { background-color: none; }
   */
 .full-height-content {height: 100vh;}
 /* MAKE BUTTON WHITE AND REDUCE SHADOW */
-md-button.md-default-theme.md-raised.md-primary:not([disabled]):hover,
-md-button.md-default-theme.md-raised.md-primary:not([disabled]).focus,
-md-button.md-default-theme.md-fab.md-primary:not([disabled]):hover,
-md-button.md-default-theme.md-fab.md-primary:not([disabled]).focus {
+
+.md-button.md-default-theme.md-primary.md-fab {
+  color: $gray;
+  background-color: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.md-button.md-default-theme.md-raised.md-primary:not([disabled]):hover,
+.md-button.md-default-theme.md-raised.md-primary:not([disabled]).focus,
+.md-button.md-default-theme.md-fab.md-primary:not([disabled]):hover,
+.md-button.md-default-theme.md-fab.md-primary:not([disabled]).focus {
   background-color: #fff;
 }
 
-.md-shadow-bottom-z-2, md-button.md-raised.focus:not([disabled]),
-md-button.md-raised:not([disabled]):hover,
-md-button.md-fab.focus:not([disabled]),
-md-button.md-fab:not([disabled]):hover {
+.md-shadow-bottom-z-2, .md-button.md-raised.focus:not([disabled]),
+.md-button.md-raised:not([disabled]):hover,
+.md-button.md-fab.focus:not([disabled]),
+.md-button.md-fab:not([disabled]):hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
