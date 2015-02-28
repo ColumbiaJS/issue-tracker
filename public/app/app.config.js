@@ -28,6 +28,6 @@
     function(event, unfoundState, fromState, fromParams){
       console.log(unfoundState.to, unfoundState.toParams, unfoundState.options, fromState); // "lazy.state"
     });
-    $log.info('app module loaded');
+    // $log.info('app module loaded');
   });
 })();

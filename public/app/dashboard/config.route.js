@@ -12,6 +12,6 @@
   });
 
   appDashboard.run(function Run($auth, $log, IdentityService) {
-    console.log('running app');
+    // console.log('running app');
   });
 })();

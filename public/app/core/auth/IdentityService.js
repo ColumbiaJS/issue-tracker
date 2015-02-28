@@ -35,7 +35,7 @@
           .error(function(data, status, headers, config) {
             $log.warn('user is not authenticated and not set');
             currentUser = {};
-            $log.warn(data, status, headers, config);
+            // $log.warn(data, status, headers, config);
             deferred.reject(data);
           });
       }

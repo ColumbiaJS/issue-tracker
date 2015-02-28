@@ -10,7 +10,7 @@
       $mdSidenav('left')
         .close()
         .then(function() {
-          $log.debug('close left is done');
+          // $log.debug('close left is done');
         });
     };
   }
