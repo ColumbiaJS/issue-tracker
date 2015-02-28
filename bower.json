@@ -51,7 +51,10 @@
     "angular-toastr": "~0.5.2",
     "angular-bootstrap": "~0.12.0",
     "satellizer": "0.6.0",
-    "angular-material": "~0.8.1"
+    "angular-material": "~0.8.1",
+    "angular-material-icons": "~0.4.0",
+    "svg-morpheus": "~0.1.8",
+    "angular-marked": "~0.0.12"
   },
   "dependencies": {
     "json3": "~3.3.2",

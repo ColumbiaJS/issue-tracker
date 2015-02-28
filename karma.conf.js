@@ -38,6 +38,10 @@ module.exports = function(config) {
       '../bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       '../bower_components/satellizer/satellizer.js',
       '../bower_components/angular-material/angular-material.js',
+      '../bower_components/angular-material-icons/angular-material-icons.min.js',
+      '../bower_components/svg-morpheus/compile/minified/svg-morpheus.js',
+      '../bower_components/marked/lib/marked.js',
+      '../bower_components/angular-marked/angular-marked.js',
       // endbower
       '../../test/test-app.js',
       '**/*.module.js',

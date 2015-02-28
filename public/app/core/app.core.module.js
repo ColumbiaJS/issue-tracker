@@ -10,6 +10,7 @@
     /* 3rd party modules */
     'ui.router', 'ui.bootstrap', 'ui.select', 'ui.utils',
     'satellizer', 'ngDialog', 'toastr',
-    'angularUtils.directives.dirPagination', 'ngMaterial', 'cfp.hotkeys'
+    'angularUtils.directives.dirPagination', 'ngMaterial',
+    'ngMdIcons', 'angularMoment', 'hc.marked'
   ]);
 })();
