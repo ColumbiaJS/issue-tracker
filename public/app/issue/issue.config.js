@@ -7,6 +7,7 @@
     $stateProvider
       .state('issues', {
         url: '/issues',
+        // abstract: true,
         templateUrl: '/partials/issue/issue-list.html',
         controller: 'IssueListCtrl as vm'
       })
@@ -16,26 +17,13 @@
         controller: 'IssueDetailCtrl as vm'
       })
       .state('issues.issue', {
-        url: '/:issueId',
+        url: '/issue/:issueId',
         templateUrl: '/partials/issue/issue-detail.html',
         controller: 'IssueDetailCtrl as vm'
       })
       .state('issues.new', {
         url: '/new',
-        templateUrl: '/partials/issue/form/issue-form.html',
-        controller: 'IssueFormCtrl',
-        controllerAs: 'vm'
-      })
-      .state('issues.edit', {
-        url: '/:id/edit',
-        templateUrl: '/partials/issue/form/issue-form.html',
-        controller: 'IssueFormCtrl',
-        controllerAs: 'vm'
-      })
-      .state('issues.show', {
-        url: '/:id',
-        templateUrl: '/partials/issue/issue-detail.html',
-        controller: 'IssueDetailCtrl as vm'
+        templateUrl: '/partials/issue/new-issue.html'
       });
   });
 
