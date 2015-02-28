@@ -1,16 +1,14 @@
-<div layout="column" layout-fill
+<div layout="column"
      hotkey="{right: vm.reselect, space: vm.reselect}">
 
-
+ <section layout="row" flex>
   <md-toolbar md-scroll-shrink>
     <md-whiteframe class="md-whiteframe-z3">
       <div class="md-toolbar-tools">
-        <filter-select
-          select-model="vm.filterOption"
-          filter-opts="vm.filterSelectOpts"></filter-select>
+        <ng-md-icon ng-click="vm.toggle()" icon="{{vm.issueListIcon}}" ng-attr-style="fill: {{vm.issueListFill}}" size="24" options='{"rotation": "none"}'></ng-md-icon>
         <expanding-search search-text="searchText"></expanding-search>
         <span flex></span>
-        <md-button class="md-fab md-primary md-fab-right">
+        <md-button class="md-fab md-primary md-fab-right" ng-click="vm.newIssue()">
           <md-tooltip>New Issue</md-tooltip>
           <i class="fa fa-plus">
           </i>
@@ -18,56 +16,55 @@
       </div>
     </md-whiteframe>
   </md-toolbar>
+  </section>
 
-  <md-content class="" style="height:600px;">
+  <section layout="row" flex>
 
-    <div class="screen screen1">
-      <!-- <pre>{{ vm.issues | json }}</pre> -->
-      <md-list>
-        <md-item ng-repeat="issue in vm.issues
-                        | filter: searchText
-                        | issueState: vm.filterOption"
-             ng-class="vm.selectedIndex === issue._id ? 'contact wrapper animatable screen1-contact' : 'contact'"
-             ng-click="vm.selectIssue(issue)"
-             animatable-id="contact"
-             id="{{issue._id}}">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="issues-nav" md-is-locked-open="vm.sidenavOpen" style="width:400px;">
+      <md-toolbar class="md-theme-indigo">
+        <filter-select class="filter-select-sidenav"
+          select-model="vm.filterOption"
+          filter-opts="vm.filterSelectOpts">
+        </filter-select>
+        <!-- <h1 class="md-toolbar-tools">Sidenav Left</h1> -->
+      </md-toolbar>
+      <md-content class="md-padding" style="height:600px;">
+          <!-- <pre>{{ vm.issues | json }}</pre> -->
+          <md-list>
+            <md-item ng-repeat="issue in vm.issues
+                            | filter: searchText
+                            | issueState: vm.filterOption"
+                 ng-class="vm.selectedIndex === issue._id ? 'active-issue' : 'issue'"
+                 ng-click="vm.selectIssue(issue)"
+                 animatable-id="contact"
+                 id="{{issue._id}}">
 
-          <md-item-content>
+              <md-item-content>
 
-            <div class="md-tile-left">
-              <p ng-class="{'text-success': issue.state === 'open', 'text-error': issue.state === 'closed'}">{{ issue.state }}</p>
-              <!-- <img ng-src="{{issue.face}}" alt="{{issue.who}}" class="face"> -->
-            </div>
-            <div class="md-tile-content">
-              <h3>{{issue.number}}</h3>
-              <a href="{{issue.url}}">{{ issue. url }}</a>
-              <p>
-                {{issue.body}}
-              </p>
-            </div>
-<!--             <img ng-class="vm.selectedIndex === issue._id ? 'avatar animatable screen1-avatar' : 'avatar'"
-                animatable-id="img"
-                ng-src="{{issue.images.logo[0].thumb.url}}">
-            <div ng-class="vm.selectedIndex === issue._id ? 'name animatable' : 'name'"
-                 animatable-id="name">
-              <h3 class="paragraph-h3">{{issue.profile.name}}</h3>
-            </div>
-            <div ng-class="vm.selectedIndex === issue._id ? 'list animatable' : 'list'"
-                 animatable-id="list">
-              <h4>{{ issue.profile.title }} <small>{{ issue.profile.subtitle }}</small></h4>
-              <p><a href="{{ issue.profile.website }}">{{ issue.profile.website }}</a></p>
+                <div class="md-tile-left"
+                     ng-click="vm.selectIssue(issue)">
+                  <p ng-class="{'text-success': issue.state === 'open', 'text-error': issue.state === 'closed'}">{{ issue.state }}</p>
+                </div>
+                <div class="md-tile-content">
+                  <h3>#{{issue.number}}: {{ issue.title }}</h3>
+                  <a href="{{issue.url}}" target="_blank">View Issue #{{ issue.number }} on Github</a>
+                  <p>
+                    {{issue.body | limitTo:80}}
+                    <span ng-show="issue.body.length > 80">...</span>
+                  </p>
+                </div>
 
-              <p class="paragraph">
-                {{ issue.profile.summary }}
-              </p> -->
+              </md-item-content>
 
-          </md-item-content>
+            </md-item>
+          </md-list>
 
-        </md-item>
-      </md-list>
+      </md-content>
+    </md-sidenav>
 
-    </div>
-
-  </md-content>
+    <md-content class="" style="height:600px;">
+      <ui-view></ui-view>
+    </md-content>
+  </section>
 
 </div>

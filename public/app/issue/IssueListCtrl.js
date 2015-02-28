@@ -7,38 +7,36 @@
 
   IssueListCtrl.$inject = [
     'DataService', 'common', '$stateParams', '$state', '$location',
-    '$anchorScroll'
+    '$anchorScroll', '$mdSidenav'
   ];
   function IssueListCtrl(
-    DataService, common, $stateParams, $state, $location, $anchorScroll) {
+    DataService, common, $stateParams, $state, $location, $anchorScroll, $mdSidenav) {
     var logger = common.logger,
-        vm     = this,
-        __savedSelectedIndex = -1;
+        vm     = this;
 
-    // if ($stateParams.activeIssueId) {
-    //   logger.info('$stateParams.activeIssueId: ' + $stateParams.activeIssueId);
-    //   vm.selected
-    //   __savedSelectedIndex = $stateParams.activeIssueId.toString();
-    //   vm.selectedIndex = __savedSelectedIndex;
-    // }
-
-    vm.currentPage = 1;
-    vm.pageSize = 4;
     vm.issues = [];
+    vm.sidenavOpen = true;
+    vm.issueListIcon = 'arrow_back';
+    vm.issueListFill = '#3F51B5';
+    vm.title = 'Issues';
     vm.getIssues = getIssues;
     vm.selectIssue = selectIssue;
-    vm.reselect = reselect;
-    // vm.selectedIndex = $stateParams.activeIssueId || -1;
-    console.log('selected index: ' + vm.selectedIndex);
-    vm.title = 'Issues';
+    vm.newIssue = newIssue;
+
 
     var filterOptions = [
       {value: '$', text: 'All'},
       {value: 'open', text: 'Open'},
       {value: 'closed', text: 'Closed'}
     ];
+
     vm.filterBy = filterOptions;
     vm.filterOption = filterOptions[0];
+
+    vm.filterSelectOpts = {
+      selectedPrefix: 'Issues: ',
+      selectOptions: vm.filterBy
+    };
 
     activate();
 
@@ -46,14 +44,29 @@
       $state.go('issues');
     };
 
+    vm.close = function() {
+      $mdSidenav('issues-nav').close()
+        .then(function(){
+          logger.info('close issues-nav list is done');
+        });
+    };
+
+    vm.toggle = function() {
+      vm.sidenavOpen = !vm.sidenavOpen;
+      if (vm.sidenavOpen) {
+        vm.issueListIcon = 'arrow_back';
+        vm.issueListFill = '#cc99ff';
+      } else {
+        vm.issueListIcon = 'menu';
+        vm.issueListFill = '#cc99ff';
+      }
+    };
+
     function activate() {
       return getIssues().then(function() {
         logger.info('Issues Loaded');
-        vm.selectedIndex = $stateParams.activeIssueId || -1;
-        $location.hash(vm.selectedIndex);
         $anchorScroll.yOffset = 200;
         $anchorScroll();
-        // vm.selectedIndex = __savedSelectedIndex;
       });
     }
 
@@ -68,20 +81,13 @@
       vm.selectedIndex = issue._id;
       logger.info(issue._id);
       setTimeout(function () {
-        $state.go('issue', {issueId: issue._id});
+        $state.go('issues.issue', {issueId: issue._id});
       });
     }
 
-    function reselect() {
-      if (vm.selectedIndex !== -1) {
-        $state.go('issue', {issueId: vm.selectedIndex});
-      }
+    function newIssue() {
+      $state.go('issues.new');
     }
-
-    vm.filterSelectOpts = {
-      selectedPrefix: 'Issues: ',
-      selectOptions: vm.filterBy
-    };
 
   }
 })();
