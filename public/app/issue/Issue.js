@@ -4,7 +4,7 @@
   var app = angular.module('app.issue');
 
   app.factory('Issue', function($http) {
-    var apiEndpoint = '/api/companies/';
+    var apiEndpoint = '/api/issues/';
     function Issue(issueData) {
       if (issueData) {
         this.setData(issueData);
