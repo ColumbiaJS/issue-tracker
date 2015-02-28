@@ -1,120 +1,56 @@
-<section class="container-fluid offset-top">
-  <div class="col-md-10 col-md-offset-1">
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-
-          <div class="list-group col-md-3 col-xs-3">
-
-            <h2 class="issue-name">
-              <a ui-sref=".profile"
-                 ui-sref-active="active"
-                 >
-                {{vm.issue.profile.name}}
-              </a>
-            </h2>
-            <h2>
-              <a ui-sref=".profile"
-                 ui-sref-active="active"
-                 >
-                Issue
-              </a>
-            </h2>
-            <a ng-if="vm.isAdmin"
-               ui-sref=".admin" ui-sref-active="active"
-               class="aside-link">
-              Admin Only
-            </a>
-            <a ui-sref=".profile" ui-sref-active="active"
-               class="aside-link">
-              <!-- <span class="fa fa-user"></span> -->
-              Profile
-            </a>
-            <a ui-sref=".images" ui-sref-active="active"
-               class="aside-link">
-              <!-- <span class="fa fa-user"></span> -->
-              Images
-            </a>
-            <a ui-sref=".details" ui-sref-active="active"
-               class="aside-link">
-              <!-- <span class="fa fa-list"></span> -->
-              Details
-            </a>
-            <a ui-sref=".links" ui-sref-active="active"
-               class="aside-link">
-              <!-- <span class="fa fa-link"></span> -->
-              Links
-            </a>
-            <a ui-sref=".founders" ui-sref-active="active"
-               class="aside-link">
-              <!-- <span class="fa fa-group"></span> -->
-              Issue Founders
-            </a>
-            <h2>
-              <a ui-sref="users.edit.profile({id: vm.issue._user._id})"
-                 ui-sref-active="active"
-                 class="switch-view">
-                User
-              </a>
-            </h2>
+<div class="row">
+  <div class="col-md-12">
+    <form
+      role="form"
+      name="issueForm"
+      ng-submit="form.submitIssue(issueForm.$valid)"
+      novalidate
+    >
+      <!-- <pre>{{ form.CI.clone | json }}</pre> -->
+      <blockquote>
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="form-group">
+              <label class="sr-only" for="title">Email address</label>
+              <input type="text"
+                     class="form-control"
+                     name="title"
+                     placeholder="Issue Title"
+                     ng-model="form.issue.title">
+            </div>
           </div>
-
-          <div class="col-md-9 col-xs-9">
-
-
-
-            <form
-              class="form-horizontal"
-              role="form"
-              name="issueForm"
-              ng-submit="vm.submitIssue(issueForm.$valid)"
-              novalidate
-            >
-
-              <div ng-if="vm.issue.profile.name">
-                <img ng-src="{{vm.issue.images.logo[0].thumb.url}}" class="profile-image center-block" alt="{{vm.issue.images.logo[0].filename}}">
-                <h2 ng-if="vm.issue.images.logo.length === 0"class="center top-title">{{ vm.issue.profile.name }}</h2>
-              </div>
-
-        <!--       <div ng-if="vm.isAdmin">
-                <div ng-include="'/partials/issue/form/admin-fields.html'"></div>
-              </div> -->
-
-              <div ui-view></div>
-        <!--       <div ng-include="'/partials/issue/form/profile-fields.html'"></div>
-              <div ng-include="'/partials/issue/form/founders-form.html'"></div>
-              <div ng-include="'/partials/issue/form/details-fields.html'"></div>
-              <div ng-include="'/partials/issue/form/links-form.html'"></div>
-              <div ng-include="'/partials/issue/form/images-form.html'"></div> -->
-
-              <single-flex-row>
-                <button class="btn btn-primary btn-lg"
-                        ng-if="!vm.readyToSubmit()">
-                  UPDATE
-                </button>
-                <button ng-if="vm.readyToSubmit()"
-                        class="btn btn-primary btn-lg">
-                  SUBMIT ISSUE
-                </button>
-              </single-flex-row>
-
-              <pre>{{ issueForm | json }}</pre>
-        <!--       <pre>{{ issueForm.issueName.$error | json }}</pre>
-              <pre>{{ issueForm.$submitted }}</pre>
-              <pre>{{ issueForm.issueName.$asyncValidators.issueIsAvailable }}</pre>
-              <pre>{{ issueForm.issueName.$touched }}</pre> -->
-              <pre>{{ vm.issue | json }}</pre>
-
-              </div>
-            </form>
-
+          <div class="col-sm-4">
+            <div class="pull-right btn btn-default" ng-click="form.cancel()">
+              Cancel
+            </div>
+            <button class="pull-right btn btn-success"
+                    type="submit">Save
+            </button>
           </div>
-
-
         </div>
-      </div>
-    </div>
+        <div class="col-md-9">
 
+
+          <h3>{{ form.issue.title }} <span class="gray">#{{ form.issue.number }}</span></h3>
+          <span class="label label-success"><i class="fa fa-bullhorn"></i> Open</span>
+          <a href="{{form.issue.user.html_url}}">@{{ form.issue.user.login }}</a> opened this issue <em am-time-ago="form.issue.created_at" class="italic"></em>
+        </div>
+      </blockquote>
+
+      <p class="text-muted"><em>From @{{form.issue.user.login}} on {{form.issue.updated_at | amCalendar}}</em></p>
+      <div class="form-group">
+        <label class="sr-only" for="body">Body</label>
+        <textarea rows="4"
+               class="form-control"
+               name="body"
+               placeholder="Issue Description"
+               ng-model="form.issue.body">
+        </textarea>
+      </div>
+      <div marked="form.issue.body"></div>
+
+
+      <pre>{{ form.issue | json }}</pre>
+    </form>
   </div>
-</section>
+</div>
