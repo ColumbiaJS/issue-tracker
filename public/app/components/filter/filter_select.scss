@@ -1,3 +1,13 @@
 .filter-select {
   display: inline-block; float: left; min-width: 200px; padding-right: 10px;
+  margin: 0 auto;
+}
+
+.filter-select-sidenav {
+  .filter-select {
+    display: block; float: none;
+    width: 100%;
+    padding-right: 10px; padding-left: 10px; padding-top: 15px;
+    margin: 0 auto;
+  }
 }
