@@ -1,11 +1,11 @@
 {
-  "name"         : "issue-tracker",
-  "version"      : "0.0.0",
-  "public"       : false,
-  "description"  : "Opinionated Fullstack AngularJS and Express app (MEAN) from ColumbiaJS",
-  "repository"   : {
-    "type" : "git",
-    "url" : "http://github.com/default/issue-tracker.git"
+  "name": "issue-tracker",
+  "version": "0.1.0",
+  "public": false,
+  "description": "Opinionated Fullstack AngularJS and Express app (MEAN) from ColumbiaJS",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/default/issue-tracker.git"
   },
   "main": "server.js",
   "scripts": {
