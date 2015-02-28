@@ -2,6 +2,11 @@
   // Generated on 2015-02-18 using generator-columbia-angular 1.2.2
   'use strict';
 
+  var shell  = require('shelljs'),
+      semver = require('semver'),
+      Q      = require('q'),
+      chalk  = require('chalk');
+
   module.exports = function(grunt) {
     var justInTimeStaticMappings = { // for plugins that can't be resolved in auto mapping
       protractor    : 'grunt-protractor-runner',
