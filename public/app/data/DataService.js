@@ -4,10 +4,10 @@
   angular.module('app').factory('DataService', DataService);
 
   DataService.$inject = [
-    '$http', '$location', '$q', 'common', 'User', 'Issue'
+    '$http', '$location', '$q', 'common', 'User', 'Issue', '$timeout'
   ];
 
-  function DataService($http, $location, $q, common, User, Issue) {
+  function DataService($http, $location, $q, common, User, Issue, $timeout) {
     var logger = common.logger;
     var isPrimed = false;
     var primePromise;
@@ -16,8 +16,10 @@
       getUsers: getUsers,
       getUser: getUser,
       updateUser: updateUser,
+      issues: [],
       getIssues: getIssues,
       getIssue: getIssue,
+      createIssue: createIssue,
       updateIssue: updateIssue,
       ready: ready
     };
@@ -54,19 +56,17 @@
         console.log('data in data.data');
         console.log(data.data);
         angular.forEach(data.data, function(issueData) {
-          console.log(issueData);
+          // console.log(issueData);
           issuesToReturn.push(new Issue(issueData));
         });
+        // we set these to same object so when we create issue it gets added to list
+        service.issues = issuesToReturn;
         return issuesToReturn;
       }
     }
 
     function getData(data, status, headers, config) {
       var dataToReturn = data.data;
-      console.log('data returned for single model');
-      console.log(data);
-      console.log('data in data for single model');
-      console.log(data.data);
       return dataToReturn;
     }
 
@@ -86,6 +86,21 @@
       });
     }
 
+    function create(apiModelName, data) {
+      return $http.post('/api/' + apiModelName, data).then(getData);
+    }
+
+    function createIssue(issueData) {
+      return create('issues', issueData).then(function(data) {
+        console.log('Success saving issue');
+        var issueToReturn = new Issue(data);
+        return $timeout(function () {
+          service.issues.push(issueToReturn); // this causes IssueList to update
+          return issueToReturn;
+        });
+      });
+    }
+
     function update(apiModelName, data) {
       return $http.put('/api/' + apiModelName + '/' + data._id, data).then(getData);
     }
@@ -99,13 +114,15 @@
 
     function updateIssue(issueData) {
       return update('issues', issueData).then(function(data) {
+        console.log('Success saving issue');
+        console.log(data);
         var issueToReturn = new Issue(data);
         return issueToReturn;
       });
     }
 
     function ready() {
-      // logger.info('ready');
+      logger.info('ready');
     }
   }
 })();
