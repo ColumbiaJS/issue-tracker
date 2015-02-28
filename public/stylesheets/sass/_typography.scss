@@ -1,5 +1,9 @@
 .center { text-align: center; }
 
+h1, h2, h3, h4, h5, h6 { // gray span inside heading tags
+  span.gray { color: $gray-light; }
+}
+
 h2.top-title {
   font-weight: bold;
   font-size: 34px;

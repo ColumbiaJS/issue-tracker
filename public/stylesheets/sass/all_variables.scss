@@ -6,9 +6,9 @@
 
 // Bootstrap overrides and other global vars
 
-$sans-font-family: 'Lato', verdana, arial, helvetica, sans-serif;
-$sans-font-weight: 200;
-$sans-font-weight: 200;
+$sans-font-family: 'Lato', Verdana, Arial, Helvetica, sans-serif;
+$sans-font-family: Verdana, Arial, Helvetica, sans-serif;
+$sans-font-weight: 500;
 
 // custom
 $border-color: #eee;
@@ -74,7 +74,8 @@ $component-active-bg: $brand-primary;
 
 
 // Typography
-$font-family-sans-serif: 'Lato', 'Open Sans', verdana, arial, helvetica;
+// $font-family-sans-serif: 'Lato', 'Open Sans', verdana, arial, helvetica;
+$font-family-sans-serif: 'Lato', Helvetica, Verdana, Arial, Helvetica;
 $font-family-serif: PT Serif;
 $font-family-monospace: Monaco;
 $font-family-base: $font-family-sans-serif;
@@ -98,7 +99,7 @@ $font-size-xs: ceil($font-size-sm * 0.90);
 $line-height-base: 1.428571429;
 $line-height-computed: floor($font-size-base * $line-height-base);
 $headings-font-family: $font-family-base;
-$headings-font-weight: 200;
+$headings-font-weight: 500;
 $headings-line-height: 1.1;
 $headings-color: inherit;
 

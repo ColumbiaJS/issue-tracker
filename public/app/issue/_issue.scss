@@ -1,0 +1,21 @@
+.issue-detail {
+  padding-top: 20px;
+  h3 { -webkit-margin-before: 0; }
+}
+
+md-item {
+  md-item-content {
+    padding-left: 8px;
+  }
+}
+md-item.active-issue {
+  md-item-content {
+    a { color: $gray-dark; }
+    background-color: $green;
+    color: white;
+    p.text-success {
+      color: $green-dark;
+    }
+  }
+
+}
