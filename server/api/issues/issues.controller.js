@@ -43,7 +43,10 @@
       Issue.findOne({_id: id}).exec(updateIssue(req, res));
     },
     destroy: function (req, res) {
-
+      Issue.remove({_id: req.params.id}, function (err) {
+        if (err) { return errorHandler.error(res, err); }
+        return res.status(204).send({message: 'Document removed'});
+      });
     }
   };
 
@@ -64,12 +67,9 @@
       issue.created_at = issueData.created_at;
       issue.updated_at = issueData.updated_at;
       issue.closed_at = issueData.closed_at;
-      // issue.comments = issueData.comments;
-      // issue.labels = issueData.labels;
       issue.save(function (err, data) {
         onIssueSave(req, res, err, data);
       });
-
     };
   }
 
