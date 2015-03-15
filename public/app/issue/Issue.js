@@ -26,8 +26,8 @@
         var endpoint = this.endpointWithId() + '/links/' + link._id;
         return $http.delete(endpoint).then(getDeleteData);
       },
-      deleteFounder: function(founder) {
-        var endpoint = this.endpointWithId() + '/founders/' + founder._id;
+      deleteIssue: function(issue) {
+        var endpoint = this.endpointWithId() + '/issues/' + issue._id;
         return $http.delete(endpoint).then(getDeleteData);
       },
       endpointWithId: function() {
@@ -41,8 +41,6 @@
       console.log(data.data);
       return dataToReturn;
     }
-
-
 
     return Issue;
   });

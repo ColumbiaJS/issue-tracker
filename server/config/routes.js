@@ -30,11 +30,8 @@
     app.use('/api/issues', require('../api/issues'));
     app.use('/auth', require('../auth'));
 
-
-
     app.route('/partials/*')
       .get(clientViews.viewPartials);
-    // i think the below is the express 4 way to do it
 
     // All undefined asset or api routes should return a 404
     app.route('/:url(api|auth|components|app|bower_components|assets)/*')

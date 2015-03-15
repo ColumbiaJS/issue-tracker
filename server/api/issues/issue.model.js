@@ -5,10 +5,11 @@
       qs       = require('querystring'),
       ObjectId = mongoose.Schema.Types.ObjectId,
       ts       = require('../../db/plugins/timestamps'),
-      _        = require('lodash');
+      _        = require('lodash'),
+      STATES   = ['open', 'close'];
 
   var Issue;
-  var STATES = ['open', 'close'];
+
   var IssueSchema = mongoose.Schema({
     url: String,
     labels: [],
